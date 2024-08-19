@@ -3,13 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>nombre del juego</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="img" id="img_01"></div>
-    <div class="img" id="img_02"></div>
-    <div class="img" id="img_03"></div>
-    <div class="img" id="img_04"></div>
-    <div class="img" id="img_05"></div>
+    <div class="container">
+        <div class="options">
+            <div id="img_02">
+                <img class="img" src="./img/2.png">
+            </div>
+            <div id="img_03">
+                <img class="img" src="./img/3.png">
+            </div>
+            <div id="img_04">
+                <img class="img" src="./img/4.png">
+            </div>
+        </div>
+        <div class="puzzle">
+            <div id="img_01">
+                <img class="img" src="./img/1.png">
+            </div>
+            <div class="img drop-zone" id="img_02"></div>
+            <div class="img drop-zone" id="img_03"></div>
+            <div class="img drop-zone" id="img_04"></div>
+            <div id="img_05">
+                <img class="img" src="./img/5.png">
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
 </body>
 </html>
