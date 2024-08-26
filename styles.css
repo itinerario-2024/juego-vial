@@ -1,6 +1,21 @@
-.img{ 
-    border: solid black 2px;
-    background:blue;
-    width:100px;
-    height:100px;
+.img{
+    border: solid rgb(248, 1, 1) 2px;
+    background:rgb(9, 252, 1);
+    width:150px;
+    height:150px;
+}
+.container{
+    display: grid;
+    gap: 20px;
+}
+.options{
+    justify-content: center;
+    display:flex;
+    flex-direction: row;
+    gap: 60px;
+}
+.puzzle{
+    display:flex;
+    gap: 10px;
+    flex-direction: row;
 }
