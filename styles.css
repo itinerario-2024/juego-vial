@@ -19,3 +19,6 @@
     gap: 10px;
     flex-direction: row;
 }
+.draggable{
+    position: relative
+}
