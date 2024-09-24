@@ -36,5 +36,5 @@ function cura (elm1,elm2){
         dim1.right<dim2.right){
             console.log("esta dentro")
         }
-        else console.log("no la sintio")
+        else console.log("lugar erroneo")
 };
