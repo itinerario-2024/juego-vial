@@ -20,6 +20,7 @@ img3.addEventListener("touchend",(e)=>{
 });
 img3.addEventListener("touchmove",(e)=>{
     console.log("moviendose");
+
     img3.style.top = (e.targetTouches[0].clientY-offsetY)+"px";
     img3.style.left = (e.targetTouches[0].clientX-offsetX)+"px";
 
