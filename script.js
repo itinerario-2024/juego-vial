@@ -1,13 +1,17 @@
 
-let algomasserio;
+let offsetX;
+let offsetY;
 let img3 = document.querySelector("#img_03");
+
 img3.addEventListener("touchstart",(e)=>{
     console.log("empieza");
-    let touchme = e.targetTouches[0];
-    const gay = img3.getBoundingClientRect();
-    console.log(gay);
-    algomasserio=touchme.clientX-gay.left;
-    console.log (algomasserio)
+    let touch = e.targetTouches[0];
+    const dim = img3.getBoundingClientRect();
+    console.log(dim);
+    offsetX=(touch.clientX - dim.left);
+    console.log(offsetX)
+    offsetY=(touch.clientY - dim.top);
+    console.log(offsetY)
 
 });
 img3.addEventListener("touchend",(e)=>{
@@ -16,14 +20,9 @@ img3.addEventListener("touchend",(e)=>{
 });
 img3.addEventListener("touchmove",(e)=>{
     console.log("moviendose");
-    console.log (e.targetTouches);
-    console.log("termina");
-    img3.style.left = (e.targetTouches[0].clientX)+"px";
-    img3.style.top = e.targetTouches[0].clientY+"px";
+    img3.style.top = (e.targetTouches[0].clientY-offsetY)+"px";
+    img3.style.left = (e.targetTouches[0].clientX-offsetX)+"px";
 
-    console.log(e.targetTouches[0].clientY);
-    console.log (algomasserio)
-    console.log (e.targetTouches[0].clientX)
 });
 function cura (elm1,elm2){
     const dim1=elm1.getBoundingClientRect();
@@ -37,4 +36,4 @@ function cura (elm1,elm2){
             console.log("esta dentro")
         }
         else console.log("lugar erroneo")
-};
+    };
