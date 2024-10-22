@@ -30,3 +30,14 @@
     position:absolute;
     z-index: 2;
 }
+.cartel-mal{
+    border: solid black 2px;
+    background: rgb(255, 2, 2);
+    padding: 10px;
+}
+.cartel-bien{
+    border: solid black 2px;
+    background: rgb(17, 255, 0);
+    padding: 10px;
+}
+

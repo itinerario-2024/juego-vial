@@ -2,6 +2,8 @@
 let offsetX;
 let offsetY;
 let img3 = document.querySelector("#img_03");
+let img2 = document.querySelector("#img_02");
+
 
 function touchstart(e){
     console.log("empieza");
@@ -15,21 +17,24 @@ function touchstart(e){
 
 }
 img3.addEventListener("touchstart",touchstart);
-
+img2.addEventListener("touchstart",touchstart);
 function touchend(e){
     const cont = document.getElementById("img_03_drop");
+    // const cont = document.getElementById("img_02_drop");
     isInside(img3,cont)
-}
-img3.addEventListener("touchend",touchend);
+    isInside(img2,cont)}
 
+img3.addEventListener("touchend",touchend);
+img2.addEventListener("touchend",touchend);
 function touchmove(e){
     console.log("moviendose");
 
-    img3.style.top = (e.targetTouches[0].clientY-offsetY)+"px";
-    img3.style.left = (e.targetTouches[0].clientX-offsetX)+"px";
+    e.targetTouches[0].style.top = (e.targetTouches[0].clientY-offsetY)+"px";
+    e.targetTouches[0].style.left = (e.targetTouches[0].clientX-offsetX)+"px";
 
 }
 img3.addEventListener("touchmove",touchmove);
+img2.addEventListener("touchmove",touchmove);
 function isInside (contenido,contenedor){
     const dim1=contenido.getBoundingClientRect();
     console.log(dim1)
@@ -47,3 +52,14 @@ function isInside (contenido,contenedor){
         }
         else alert("lugar incorrecto")
     };
+function mensaje(MSJ, bien){
+    const p=document.querySelector(".cartel__p")
+    p.innerText=MSJ;
+    if(bien){
+        p.classList.add("cartel-bien");
+        p.classList.remove("cartel-mal");
+    }else{p.classList.remove("cartel-mal");
+        p.classList.add("cartel-bien");
+    }
+}
+    mensaje("correcto", false);
