@@ -7,7 +7,7 @@
 .container{
     display: grid;
     gap: 20px;
-    position:relative;
+
 }
 .options{
     justify-content: center;
@@ -18,8 +18,15 @@
 .puzzle{
     display:flex;
     gap: 10px;
+    top: 250px;
     flex-direction: row;
+    position: relative;
+}
+.drop-zone{
+    padding: 10px;
+    z-index: 1;
 }
 .draggable{
-    position: absolute;
+    position:absolute;
+    z-index: 2;
 }
