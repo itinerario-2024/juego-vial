@@ -28,9 +28,9 @@ function touchmove(e){
 }
 function isInside (contenido,contenedor){
     const dim1=contenido.getBoundingClientRect();
-    console.log(dim1)
+    console.log("dim1",dim1)
     const dim2=contenedor.getBoundingClientRect();
-    console.log(dim2)
+    console.log("dim2",dim2)
     if(
         dim1.left>dim2.left &&
         dim1.top>dim2.top &&
@@ -43,22 +43,22 @@ function isInside (contenido,contenedor){
         contenido.removeEventListener("touchend",touchend);
 
     }
-    else alert("lugar incorrecto")
+    else alert("lugar incorrecto");
 };
 let img3 = document.querySelector("#img_03");
  img3.addEventListener("touchstart",touchstart);
-img3.addEventListener("touchstart",touchstart);
-img3.addEventListener("touchmove",touchmove);
+ img3.addEventListener("touchmove",touchmove);
+img3.addEventListener("touchend",touchend);
 
 let img2 = document.querySelector("#img_02");
  img2.addEventListener("touchstart",touchstart2);
-img2.addEventListener("touchstart",touchstart2);
-img2.addEventListener("touchmove",touchmove2);
+ img2.addEventListener("touchmove",touchmove2);
+img2.addEventListener("touchend",touchend2);
 
 let img4 = document.querySelector("#img_04");
  img4.addEventListener("touchstart",touchstart3);
-img4.addEventListener("touchstart",touchstart3);
-img4.addEventListener("touchmove",touchmove3);
+ img4.addEventListener("touchmove",touchmove3);
+img4.addEventListener("touchend",touchend3);
 
 let offsetX2;
 let offsetY2;
@@ -83,29 +83,10 @@ function touchend2(e){
 function touchmove2(e){
     console.log("moviendose");
 
-    img2.style.top = (e.targetTouches[0].clientY-offsetY)+"px";
-    img2.style.left = (e.targetTouches[0].clientX-offsetX)+"px";
+    img2.style.top = (e.targetTouches[0].clientY-offsetY2)+"px";
+    img2.style.left = (e.targetTouches[0].clientX-offsetX2)+"px";
 
 }
-function isInside2 (contenido,contenedor){
-    const dim1=contenido.getBoundingClientRect();
-    console.log(dim1)
-    const dim2=contenedor.getBoundingClientRect();
-    console.log(dim2)
-    if(
-        dim1.left>dim2.left &&
-        dim1.top>dim2.top &&
-        dim1.bottom<dim2.bottom &&
-        dim1.right<dim2.right
-   ){
-        alert("bien");
-        contenido.removeEventListener("touchstar",touchstart2);
-        contenido.removeEventListener("touchmove",touchmove2);
-        contenido.removeEventListener("touchend",touchend2);
-
-    }
-    else alert("lugar incorrecto")
-};
 
 let offsetX3;
 let offsetY3;
@@ -130,26 +111,7 @@ function touchend3(e){
 function touchmove3(e){
     console.log("moviendose");
 
-    img4.style.top = (e.targetTouches[0].clientY-offsetY)+"px";
-    img4.style.left = (e.targetTouches[0].clientX-offsetX)+"px";
+    img4.style.top = (e.targetTouches[0].clientY-offsetY3)+"px";
+    img4.style.left = (e.targetTouches[0].clientX-offsetX3)+"px";
 
 }
-function isInside3 (contenido,contenedor){
-    const dim1=contenido.getBoundingClientRect();
-    console.log(dim1)
-    const dim2=contenedor.getBoundingClientRect();
-    console.log(dim2)
-    if(
-        dim1.left>dim2.left &&
-        dim1.top>dim2.top &&
-        dim1.bottom<dim2.bottom &&
-        dim1.right<dim2.right
-   ){
-        alert("bien");
-        contenido.removeEventListener("touchstar",touchstart3);
-        contenido.removeEventListener("touchmove",touchmove3);
-        contenido.removeEventListener("touchend",touchend3);
-
-    }
-    else alert("lugar incorrecto")
-};
