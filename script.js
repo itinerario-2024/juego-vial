@@ -44,13 +44,13 @@ function isInside (contenido,contenedor){
         dim1.top>dim2.top &&
         dim1.bottom<dim2.bottom &&
         dim1.right<dim2.right){
-            alert("bien");
+            mensaje("bien", true);
             contenido.removeEventListener("touchstar",touchstart);
             contenido.removeEventListener("touchmove",touchmove);
             contenido.removeEventListener("touchend",touchend);
 
         }
-        else mensaje("lugar incorrecto");
+        else mensaje("lugar incorrecto", false);
     };
 function mensaje(MSJ, bien){
     const p=document.querySelector(".cartel__p")
@@ -62,6 +62,13 @@ function mensaje(MSJ, bien){
         p.classList.add("cartel-mal");
         p.classList.remove("cartel-bien");
     }
+    setTimeout(quitarCartel,3*1000);
+}
+function quitarCartel(){
+    const p=document.querySelector(".cartel__p")
+    p.innerText="";
+    p.classList.remove("cartel-bien");
+    p.classList.remove("cartel-mal");
 }
     mensaje("correcto", true);
 
