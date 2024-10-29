@@ -50,7 +50,7 @@ function isInside (contenido,contenedor){
             contenido.removeEventListener("touchend",touchend);
 
         }
-        else alert("lugar incorrecto")
+        else mensaje("lugar incorrecto");
     };
 function mensaje(MSJ, bien){
     const p=document.querySelector(".cartel__p")
@@ -58,8 +58,10 @@ function mensaje(MSJ, bien){
     if(bien){
         p.classList.add("cartel-bien");
         p.classList.remove("cartel-mal");
-    }else{p.classList.remove("cartel-mal");
-        p.classList.add("cartel-bien");
+    }else{
+        p.classList.add("cartel-mal");
+        p.classList.remove("cartel-bien");
     }
 }
-    mensaje("correcto", false);
+    mensaje("correcto", true);
+
