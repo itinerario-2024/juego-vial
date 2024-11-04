@@ -16,6 +16,7 @@ function touchstart(e){
 
 function touchend(e){
     const cont = document.getElementById("img_03_drop");
+    // const cont = document.getElementById("img_02_drop");
     isInside(img3,cont)
 }
 
@@ -35,17 +36,17 @@ function isInside (contenido,contenedor){
         dim1.left>dim2.left &&
         dim1.top>dim2.top &&
         dim1.bottom<dim2.bottom &&
-        dim1.right<dim2.right
-   ){
-        alert("bien");
-        contenido.removeEventListener("touchstar",touchstart);
-        contenido.removeEventListener("touchmove",touchmove);
-        contenido.removeEventListener("touchend",touchend);
+        dim1.right<dim2.right){
+            mensaje("bien", true);
+            contenido.removeEventListener("touchstar",touchstart);
+            contenido.removeEventListener("touchmove",touchmove);
+            contenido.removeEventListener("touchend",touchend);
 
-    }
-    else alert("lugar incorrecto");
-};
-let img3 = document.querySelector("#img_03");
+
+        }
+        else mensaje("lugar incorrecto", false);
+    };
+    let img3 = document.querySelector("#img_03");
  img3.addEventListener("touchstart",touchstart);
  img3.addEventListener("touchmove",touchmove);
 img3.addEventListener("touchend",touchend);
@@ -115,3 +116,22 @@ function touchmove3(e){
     img4.style.left = (e.targetTouches[0].clientX-offsetX3)+"px";
 
 }
+function mensaje(MSJ, bien){
+    const p=document.querySelector(".cartel__p")
+    p.innerText=MSJ;
+    if(bien){
+        p.classList.add("cartel-bien");
+        p.classList.remove("cartel-mal");
+    }else{
+        p.classList.add("cartel-mal");
+        p.classList.remove("cartel-bien");
+    }
+    setTimeout(quitarCartel,3*1000);
+}
+function quitarCartel(){
+    const p=document.querySelector(".cartel__p")
+    p.innerText="";
+    p.classList.remove("cartel-bien");
+    p.classList.remove("cartel-mal");
+}
+
