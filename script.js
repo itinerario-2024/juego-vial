@@ -37,14 +37,14 @@ function isInside (contenido,contenedor){
         dim1.top>dim2.top &&
         dim1.bottom<dim2.bottom &&
         dim1.right<dim2.right){
-            mensaje("bien", true);
+            mensaje("Bien", true);
             contenido.removeEventListener("touchstar",touchstart);
             contenido.removeEventListener("touchmove",touchmove);
             contenido.removeEventListener("touchend",touchend);
 
 
         }
-        else mensaje("lugar incorrecto", false);
+        else mensaje("Lugar incorrecto", false);
     };
     let img3 = document.querySelector("#img_03");
  img3.addEventListener("touchstart",touchstart);
