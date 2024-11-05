@@ -31,11 +31,12 @@ function isInside (contenido,contenedor){
     const dim1=contenido.getBoundingClientRect();
     console.log("dim1",dim1)
     const dim2=contenedor.getBoundingClientRect();
-    console.log("dim2",dim2)
+
     if(
         dim1.left>dim2.left &&
         dim1.top>dim2.top &&
         dim1.bottom<dim2.bottom &&
+
         dim1.right<dim2.right){
             mensaje("Bien", true);
             contenido.removeEventListener("touchstar",touchstart);
@@ -61,6 +62,7 @@ let img4 = document.querySelector("#img_04");
  img4.addEventListener("touchmove",touchmove3);
 img4.addEventListener("touchend",touchend3);
 
+
 let offsetX2;
 let offsetY2;
 
@@ -84,10 +86,12 @@ function touchend2(e){
 function touchmove2(e){
     console.log("moviendose");
 
+
     img2.style.top = (e.targetTouches[0].clientY-offsetY2)+"px";
     img2.style.left = (e.targetTouches[0].clientX-offsetX2)+"px";
 
 }
+
 
 let offsetX3;
 let offsetY3;
@@ -112,6 +116,7 @@ function touchend3(e){
 function touchmove3(e){
     console.log("moviendose");
 
+
     img4.style.top = (e.targetTouches[0].clientY-offsetY3)+"px";
     img4.style.left = (e.targetTouches[0].clientX-offsetX3)+"px";
 
@@ -134,4 +139,5 @@ function quitarCartel(){
     p.classList.remove("cartel-bien");
     p.classList.remove("cartel-mal");
 }
+
 
